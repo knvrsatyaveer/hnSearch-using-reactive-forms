@@ -1,0 +1,29 @@
+<div align="center">
+  <div class="col-md-12">
+    <p-table
+      [value]="searchList"
+      [paginator]=true
+      [rows]="5"
+      [tableStyle]="{'text-align':'center'}">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Author</th>
+          <th>Story Title</th>
+          <th>Story Url</th>
+          <th>Created At</th>
+
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-src>
+        <tr>
+          <td>{{src.author}}</td>
+          <td>{{src.story_title}}</td>
+          <td style="word-wrap: break-word">{{src.story_url}}</td>
+          <td>
+            {{src.created_at | date: 'MMM d, y, h:mm:ss a' }}
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
